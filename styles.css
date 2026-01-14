@@ -4,6 +4,7 @@ body {
     text-decoration-color: blueviolet;
     font-family: "Syne", sans-serif;
     font-optical-sizing: auto;
+    padding: 30px;
 }
 
 h1{
