@@ -12,4 +12,17 @@ h1{
     font-size: 60px;
     font-weight: 300;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-optical-sizing: auto;   
 }
+
+header {
+            background-image: url('https://wellesley-college.transforms.svdcdn.com/production/Academic-Departments/Computer-Science/CPA_20240307_ACA_JH19748-Final.jpg?w=980&h=654&q=90&auto=format&fit=min&dm=1710085725&s=7b3b2840b67d839485d1fbcdfb11cb27'); 
+            background-size:cover;
+            background-repeat: no-repeat;
+            background-position-x: 58%; 
+            background-position-y:25%;
+            color: #F8F4E3;
+            height: 550px;
+            position:relative;
+
+        }
