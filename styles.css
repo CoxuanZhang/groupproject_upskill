@@ -2,4 +2,14 @@
 body {
     background-color: rgb(251, 172, 247);
     text-decoration-color: blueviolet;
+    padding: 50px;
+}
+
+h1{
+    text-align: center;
+    line-height: 80%;
+    color: rgb(136, 255, 9);
+    font-size: 60px;
+    font-weight: 300;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
