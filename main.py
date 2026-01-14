@@ -5,6 +5,8 @@ import random
 print("We generated a random number:")
 random_number = random.randint(1, 10)
 print("Random number between 1 and 10:", random_number)
+
+print("HELLLOOOOOOO COCOCOCOCOCO!")
 if random_number > 5:
     print("The number is greater than 5.")
 if random_number//2 ==0:
