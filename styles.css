@@ -18,16 +18,17 @@ h1 {
     font-optical-sizing: auto;
 }
 
-input{
+input {
     border-radius: 30%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
     font-weight: 600;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-optical-sizing: auto;   
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-optical-sizing: auto;
 }
 
-h2, p{
+h2,
+p {
     color: #333533;
 }
 
@@ -54,39 +55,31 @@ header {
         justify-content: space-around;
     }
 }
-            background-image: url('https://wellesley-college.transforms.svdcdn.com/production/Academic-Departments/Computer-Science/CPA_20240307_ACA_JH19748-Final.jpg?w=980&h=654&q=90&auto=format&fit=min&dm=1710085725&s=7b3b2840b67d839485d1fbcdfb11cb27'); 
-            background-size: contain;
-            background-repeat: repeat-x;
-            background-position-x: 58%; 
-            background-position-y:25%;
-            height: 100%;
-            position:relative;
-            padding: none;
 
-            a {
-                background-color: #CFDBD5;
-            color: #242423;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 19px;
-            padding:5px 0px 5px 0px;
-            margin: -40px -40px 20px -40px;
-            font-weight: bold; 
-            text-decoration: none; 
-            }
 
-            a:hover {
-                background-color: #F5CB5C;
-            }
+a {
+    background-color: #CFDBD5;
+    color: #242423;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    padding: 5px 0px 5px 0px;
+    margin: -40px -40px 20px -40px;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-            flex-container {
-                position: relative;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-            }
-            
-            search-bar {
-                
-                min-height:fit-content;
-            }
-        }
+a:hover {
+    background-color: #F5CB5C;
+}
+
+flex-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+search-bar {
+
+    min-height: fit-content;
+}
