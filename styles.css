@@ -29,6 +29,8 @@ header {
             background-position-y:25%;
             height: 100%;
             position:relative;
+            padding:5px 0px 5px 0px;
+            margin: -40px -40px 20px -40px;
 
             a {
                 background-color: #CFDBD5;
@@ -40,8 +42,14 @@ header {
             }
 
             flex-container {
+                position: relative;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around;
+            }
+            
+            search-bar {
+                
+                min-height:fit-content;
             }
         }
