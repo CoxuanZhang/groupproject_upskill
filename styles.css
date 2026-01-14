@@ -29,6 +29,7 @@ header {
             background-position-y:25%;
             height: 100%;
             position:relative;
+            padding: none;
 
             a {
                 background-color: #CFDBD5;
@@ -37,6 +38,10 @@ header {
             font-size: 19px;
             font-weight: bold; 
             text-decoration: none; 
+            }
+
+            a:hover {
+                background-color: #F5CB5C;
             }
 
             flex-container {
