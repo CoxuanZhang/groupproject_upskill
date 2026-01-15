@@ -32,8 +32,18 @@ function createFacultyCard(faculty) {
 function renderFacultyGallery(facultyList = profData) {
     console.log('Rendering gallery with', facultyList.length, 'faculty members');
     const gallery = document.getElementById('faculty-gallery');
+    const noResults = document.getElementById('no-results');
 
-    profData.forEach(faculty => {
+    // Clear existing cards
+    gallery.innerHTML = '';
+
+    if (facultyList.length === 0) {
+        noResults.style.display = 'block';
+        return;
+    }
+    noResults.style.display = 'none';
+
+    facultyList.forEach(faculty => {
         const card = createFacultyCard(faculty);
         card.onclick = function () {
             window.location.href = `viewProfProfile.html?name=${encodeURIComponent(faculty.name)}`;
