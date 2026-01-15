@@ -13,10 +13,10 @@ for faculty_box in faculty_boxes:
     name_element = faculty_box.find('span', class_='faculty_related_item_title_link_label')
     name = name_element.get_text(strip=True) if name_element else None
 
-    image_element = item.find('img', class_='faculty_related_item_image')
+    image_element = faculty_box.find('img', class_='faculty_related_item_image')
     headshot = image_element['src'] if image_element else None
 
-    position_element = item.find('p', class_='faculty_related_item_position')
+    position_element = faculty_box.find('p', class_='faculty_related_item_position')
     position = position_element.get_text(strip=True) if position_element else None
 
     faculty_data.append({
@@ -25,4 +25,3 @@ for faculty_box in faculty_boxes:
         'position': position
     })
 
-for faculty in faculty_data:
