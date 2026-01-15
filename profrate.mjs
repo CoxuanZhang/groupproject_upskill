@@ -1,8 +1,8 @@
 import { profData } from './data.js';
 
-function Print(){
+function Print() {
     var x = getElementById("search").value;
-    alert("You searched for " + x );
+    alert("You searched for " + x);
 }
 
 function createFacultyCard(faculty) {
@@ -25,16 +25,43 @@ function createFacultyCard(faculty) {
     position.textContent = faculty.position;
     card.appendChild(position);
 
+    //card.onclick = seeOneProf(faculty);
     return card;
 }
 
 function renderFacultyGallery() {
     const gallery = document.getElementById('faculty-gallery');
-    
+
     profData.forEach(faculty => {
         const card = createFacultyCard(faculty);
+        card.onclick = function () {
+            window.location.href = `viewProfProfile.html?name=${encodeURIComponent(faculty.name)}`;
+        };
         gallery.appendChild(card);
     });
+}
+
+function onclick() {
+
+}
+function seeOneProf(profName) {
+
+    profData.forEach(faculty => {
+        if (faculty.name == profName) {
+
+            window.location.href = 'viewProfProfile.html';
+        }
+    })
+    //console.(prof)
+    // const dataToSend = prof
+    //const displayElement = document.getElementById('prof-name');
+
+    //if (profName) {
+    //const thisProf = createFacultyCard(profName)
+    // }
+
+    //window.location.href = 'viewProfProfile.html';
+
 }
 
 document.addEventListener('DOMContentLoaded', renderFacultyGallery);
