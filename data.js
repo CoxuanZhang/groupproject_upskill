@@ -1,4 +1,4 @@
-export const pythonData = [
+export const profData = [
     {
         "name": "Carolyn Anderson",
         "headshot": "https://wellesley-college.transforms.svdcdn.com/production/people/headshot.jpeg?w=500&h=500&q=90&auto=format&fit=min&dm=1709140885&s=464daef48266dea6adda7306703c6421",
