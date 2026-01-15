@@ -86,7 +86,7 @@ header {
                 justify-content: space-around;
             }
             
-            search-bar {
+            search-container {
                 min-height:fit-content;
             }
         }
