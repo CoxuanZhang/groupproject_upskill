@@ -7,18 +7,28 @@ body {
     font-optical-sizing: auto;
 }
 
-h1{
+h1 {
     text-align: center;
     line-height: 80%;
     color: #242423;
     font-size: 60px;
+    font-weight: 300;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-optical-sizing: auto;
+}
+
+input {
+    border-radius: 30%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
     font-weight: 600;
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;   
     margin-top: 170px;
 }
 
-h2, p{
+h2,
+p {
     color: #333533;
     padding-left: 30px;
 
@@ -80,3 +90,30 @@ header {
                 min-height:fit-content;
             }
         }
+    background-image: url('https://wellesley-college.transforms.svdcdn.com/production/Academic-Departments/Computer-Science/CPA_20240307_ACA_JH19748-Final.jpg?w=980&h=654&q=90&auto=format&fit=min&dm=1710085725&s=7b3b2840b67d839485d1fbcdfb11cb27');
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-position-x: 58%;
+    background-position-y: 25%;
+    height: 100%;
+    position: relative;
+
+    flex-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+
+flex-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+search-bar {
+
+    min-height: fit-content;
+}
