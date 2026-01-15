@@ -1,24 +1,37 @@
+
 body {
     background-color: rgb(241, 241, 236);
     color: #242423;
     text-decoration-color: #F5CB5C;
     font-family: "Syne", sans-serif;
     font-optical-sizing: auto;
-    padding: 30px;
 }
 
-h1{
+h1 {
     text-align: center;
     line-height: 80%;
     color: #242423;
     font-size: 60px;
-    font-weight: 600;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-optical-sizing: auto;   
+    font-weight: 300;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-optical-sizing: auto;
 }
 
-h2, p{
+input {
+    border-radius: 30%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+    font-weight: 600;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;   
+    margin-top: 170px;
+}
+
+h2,
+p {
     color: #333533;
+    padding-left: 30px;
+
 }
 
 header {
@@ -28,21 +41,41 @@ header {
             background-position-x: 58%; 
             background-position-y:25%;
             height: 100%;
-            position:relative;
-            padding: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 110px;
+
+            ul {
+                display: flex;
+                padding-top: 20px;
+                gap: 25px;
+                list-style-type:none;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                z-index: 1;
+            }
+            
+            ul li {
+                margin-bottom: 5px; 
+            }
 
             a {
                 background-color: #CFDBD5;
-            color: #242423;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 19px;
-            padding:5px 0px 5px 0px;
-            margin: -40px -40px 20px -40px;
-            font-weight: bold; 
-            text-decoration: none; 
+                color: #242423;
+                font-family: Helvetica, sans-serif;
+                font-size: 19px;
+                font-weight: bold; 
+                padding:3px 3px 3px 3px;
+                text-decoration: none; 
+                border: none;
+                border-radius: 5px;
+                transition: transform 0.5s ease-in-out,
             }
 
             a:hover {
+                transform: scale(1.06);
                 background-color: #F5CB5C;
             }
 
@@ -54,10 +87,11 @@ header {
             }
             
             search-bar {
-                
                 min-height:fit-content;
             }
         }
+
+/*may be useless*/
 
 .gallery{
     display: flex;
@@ -113,3 +147,4 @@ header {
     white-space: normal; /* Allow wrapping */
     margin: 5px 0;
 }
+    
