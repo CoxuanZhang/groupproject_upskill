@@ -90,30 +90,61 @@ header {
                 min-height:fit-content;
             }
         }
-    background-image: url('https://wellesley-college.transforms.svdcdn.com/production/Academic-Departments/Computer-Science/CPA_20240307_ACA_JH19748-Final.jpg?w=980&h=654&q=90&auto=format&fit=min&dm=1710085725&s=7b3b2840b67d839485d1fbcdfb11cb27');
-    background-size: contain;
-    background-repeat: repeat-x;
-    background-position-x: 58%;
-    background-position-y: 25%;
-    height: 100%;
-    position: relative;
 
-    flex-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+/*may be useless*/
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    card{
+        font-size: 10px;
+        text-align: center;
+        width: 200px;
     }
 }
 
-
-flex-container {
-    position: relative;
+/* Faculty card styles */
+.faculty-card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }
 
-search-bar {
-
-    min-height: fit-content;
+.faculty-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
 }
+
+.faculty-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.faculty-position {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    word-wrap: break-word; /* Ensure text wraps */
+    white-space: normal; /* Allow wrapping */
+    margin: 5px 0;
+}
+    
