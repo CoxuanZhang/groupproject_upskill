@@ -18,12 +18,12 @@
                 <li><a href="account.html">My Account</a></li>
             </ul>
         </nav>
-            <search-bar>
+            <div class="search-container">
                 <img src="search-icon.png" alt="search icon" width="20" height="20">
                 <script src="profrate.js" type= "text/Javascript" ></script>
-                <input type="text" id="search" placeholder="Search for your prof...">
-                <input type="button" value="Enter" onclick="Print()">
-            </search-bar>
+                <input type="text" id="search-input" placeholder="Search for your prof..." class = "search-input">
+                <button id="search-button" class="search-button">Search</button>
+            </div>
         </flex-container>
     </header>
     <body>  
@@ -34,5 +34,8 @@
         <div id="faculty-gallery" class="gallery">
             <!-- Faculty cards will be inserted here by JavaScript -->
         </div>
+        <p id="no-results" class="no-results" style="display: none;">
+            No professors found matching your search.
+        </p>
     </body>
 </html>

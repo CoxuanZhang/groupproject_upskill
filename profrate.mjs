@@ -1,10 +1,5 @@
 import { profData } from './data.js';
 
-function Print(){
-    var x = getElementById("search").value;
-    alert("You searched for " + x );
-}
-
 function createFacultyCard(faculty) {
     const card = document.createElement('div');
     card.className = 'faculty-card';
@@ -28,13 +23,62 @@ function createFacultyCard(faculty) {
     return card;
 }
 
-function renderFacultyGallery() {
+function renderFacultyGallery(facultyList = profData) {
+    console.log('Rendering gallery with', facultyList.length, 'faculty members');
     const gallery = document.getElementById('faculty-gallery');
+    const noResults = document.getElementById('no-results');
+
+    // Clear existing cards
+    gallery.innerHTML = '';
+
+    if (facultyList.length === 0) {
+        noResults.style.display = 'block';
+        return;
+    }
+    noResults.style.display = 'none';
     
-    profData.forEach(faculty => {
+    facultyList.forEach(faculty => {
         const card = createFacultyCard(faculty);
         gallery.appendChild(card);
     });
 }
 
-document.addEventListener('DOMContentLoaded', renderFacultyGallery);
+function handleSearch() {
+    const searchInput = document.getElementById('search-input');
+    const searchTerm = searchInput.value;
+    const results = searchFaculty(searchTerm);
+    renderFacultyGallery(results);
+}
+
+function searchFaculty(searchTerm) {
+    const term = searchTerm.toLowerCase().trim();
+    
+    // If search is empty, show all
+    if (term === '') {
+        return profData;
+    }
+    
+    // Filter faculty by name
+    const results = profData.filter(faculty => 
+        faculty.name.toLowerCase().includes(term)
+    );
+    
+    return results;
+}
+
+
+document.addEventListener('DOMContentLoaded', function(){
+    renderFacultyGallery();
+
+    const searchButton = document.getElementById('search-button');
+    searchButton.addEventListener('click', handleSearch);
+    const searchInput = document.getElementById('search-input');
+    
+    searchButton.addEventListener('click', handleSearch);
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    });
+
+});
