@@ -147,4 +147,19 @@ header {
     white-space: normal; /* Allow wrapping */
     margin: 5px 0;
 }
-    
+ 
+
+.faculty-cards{
+    background: linear-gradient(180deg, var(--card-bg), #f7f7f7);
+    color: var(--card-text);
+    width: 100%;
+    max-width: 760px;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    gap: var(--card-gap);
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
