@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function(){
     searchButton.addEventListener('click', handleSearch);
     const searchInput = document.getElementById('search-input');
     
-    searchButton.addEventListener('click', handleSearch);
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             handleSearch();
