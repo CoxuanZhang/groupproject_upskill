@@ -1,9 +1,26 @@
 body {
-    background-color: rgb(241, 241, 236);
+    background-color: rgb(245, 244, 240);
     color: #242423;
     text-decoration-color: #F5CB5C;
-    font-family: "Syne", sans-serif;
+    font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
+    display: flex;
+    flex-flow: column;
+    padding: none;
+}
+
+main {
+  flex-grow: 1;
+}
+
+body>* {
+  padding: 0.5em;
+  border: transparent;
+  margin: 2px;
+}
+
+main:hover {
+  padding-bottom: 100%;
 }
 
 h1 {
@@ -12,11 +29,20 @@ h1 {
     color: #242423;
     font-size: 60px;
     font-weight: 300;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: "Margarine", sans-serif;
     font-optical-sizing: auto;
+    margin-top: 30px;
 }
 
 input {
+    border-radius: 30%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    font-weight: 600;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;   
+}
+
+h2 {
     border-radius: 0%;
     box-shadow: 0 0px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     font-weight: 500;
@@ -40,7 +66,12 @@ h2,
 p {
     color: #333533;
     padding-left: 30px;
+    margin-top: 30px;
+}
 
+p {
+    color: #333533;
+    padding-left: 30px;
 }
 
 header {
@@ -57,7 +88,7 @@ header {
 
             ul {
                 display: flex;
-                padding-top: 20px;
+                margin-top: 45px;
                 gap: 25px;
                 list-style-type:none;
                 align-items: center;
@@ -65,18 +96,13 @@ header {
                 justify-content: flex-start;
                 z-index: 1;
             }
-            
-            ul li {
-                margin-bottom: 5px; 
-            }
 
             a {
                 background-color: #CFDBD5;
                 color: #242423;
-                font-family: Helvetica, sans-serif;
                 font-size: 19px;
                 font-weight: bold; 
-                padding:3px 3px 3px 3px;
+                padding:3px 7px 3px 7px;
                 text-decoration: none; 
                 border: none;
                 border-radius: 5px;
@@ -84,7 +110,7 @@ header {
             }
 
             a:hover {
-                transform: scale(1.06);
+                font-size: 25px;
                 background-color: #F5CB5C;
             }
 
@@ -95,10 +121,70 @@ header {
                 justify-content: space-around;
             }
             
-            search-container {
-                min-height:fit-content;
-            }
         }
+
+search-bar {
+    min-height:fit-content;
+    align-items: center;
+}
+
+#searchicon {
+    margin-top: 10px;
+}
+
+#headersearch {
+    margin-top: 30px;
+    position: absolute;
+    right: 50px;
+}
+
+#logo {
+    max-width: 500px;
+    margin-top: 50px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#bigsearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#bigsearch input,
+#bigsearch input[type="search"],
+#bigsearch .search-input {
+    width: 100%;
+    max-width: 1800px;
+    height: 3.5rem;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+#bigsearch button {
+    margin-left: 8px;
+    height: 3.5rem;
+    padding: 0 1rem;
+    border-radius: 8px;
+    border: none;
+    background: #CFDBD5;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #F5CB5C;
+    text-align: right;
+    margin-top: 30px;
+    padding: 10px;
+    position: static; /* no longer fixed/sticky so it appears in normal flow */
+    width: 100%;
+}
 
 /*may be useless*/
 
@@ -134,6 +220,11 @@ header {
     align-items: center;
 }
 
+.faculty-card:hover {
+    transition: ease-in-out 0.3s;
+    background: #CFDBD5;
+    border: 1px solid #b9b9b9;
+    text-decoration: underline;
 #prof-profile-container {
     display: flex;
     -direction: row;
