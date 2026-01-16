@@ -41,8 +41,34 @@
     </datalist> 
     </div>
     <div id="prof-ratings" class="displayElement">
-        <!-- Faculty cards will be inserted here by JavaScript -->
+        <button id="update-btn" onclick="updateGraph()">Update Graph</button>
+        <div id="graphs-container">
+            <div class="graph-section">
+                <h2>Criteria 1: Learning Pace</h2>
+                <div class="graph-wrapper">
+                    <img id="graph-1" src="" alt="Criteria 1 Graph" style="display: none;">
+                </div>
+            </div>
+            
+            <!-- Graph 2 -->
+            <div class="graph-section">
+                <h2>Criteria 2: Procrastination</h2>
+                <div class="graph-wrapper">
+                    <img id="graph-2" src="" alt="Criteria 2 Graph" style="display: none;">
+                </div>
+            </div>
+            
+            <!-- Graph 3 -->
+            <div class="graph-section">
+                <h2>Criteria 3: Prior Experience</h2>
+                <div class="graph-wrapper">
+                    <img id="graph-3" src="" alt="Criteria 3 Graph" style="display: none;">
+                </div>
+            </div>
+        </div>
     </div>
+    <button id="back-btn"> <a href="site.html">Back to Profile</a></button>
+
 </div>
 
 </html>
