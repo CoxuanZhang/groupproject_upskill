@@ -75,18 +75,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const slider = document.getElementById('grade');
 const gradeLabels = ['F', 'P', 'C-', 'C', 'C+', 'B-', 'B', 'B+', 'A-', 'A', 'A+'];
-slider.addEventListener('input', function () {
-    const selectedGrade = gradeLabels[this.value];
+let selectedGrade = gradeLabels[0];
+let professorName = nameParam ? decodeURIComponent(nameParam).trim() : 'Unknown';
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize slider listener after DOM loads
+    if (slider) {
+        slider.addEventListener('input', function() {
+            selectedGrade = gradeLabels[this.value];
+            console.log('Selected grade updated to:', selectedGrade);
+        });
+    }
+    
+    // Call updateAllGraphs after DOM is ready
+    updateAllGraphs();
 });
-const lowestGrade = selectedGrade.value();
+
 const CRITERIA = {
-    1: 'pace',
+    1: 'pace', 
     2: 'procrastination',
     3: 'prior_experience'
 };
-graphImg.style.display = 'none';
+
 async function loadGraph(graphNumber, criteria) {
-    const response = await fetch('/visualisation', {
+    const response = await fetch('http://127.0.0.1:5000/generate-graph', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -94,34 +106,53 @@ async function loadGraph(graphNumber, criteria) {
         body: JSON.stringify({
             professor: professorName,
             criteria: criteria,
-            lowest_grade: lowestGrade
+            lowest_grade: selectedGrade
         })
     });
     if (!response.ok) {
+        console.error(`HTTP error! status: ${response.status}`);
         throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    const graphImg = document.getElementById('graph-img');
+    console.log(`DEBUG: Graph ${graphNumber} response:`, data);
+    
+    if (!data.success) {
+        console.error(`Failed to generate graph ${graphNumber}:`, data.error);
+        return;
+    }
+    
+    const graphImg = document.getElementById(`graph-${graphNumber}`);
+    if (!graphImg) {
+        console.error(`Image element graph-${graphNumber} not found`);
+        return;
+    }
+    
     graphImg.src = 'data:image/png;base64,' + data.image;
     graphImg.style.display = 'block';
+    console.log(`DEBUG: Graph ${graphNumber} loaded successfully`);
 }
 
 async function updateAllGraphs() {
+    console.log('updateAllGraphs called');
     const updateBtn = document.getElementById('update-btn');
+    if (!updateBtn) {
+        console.error('update-btn not found');
+        return;
+    }
     updateBtn.disabled = true;
-
+    
     try {
-        // Call visualise() three times with different criteria
         await Promise.all([
-            updateGraph(1, CRITERIA[1]),
-            updateGraph(2, CRITERIA[2]),
-            updateGraph(3, CRITERIA[3])
+            loadGraph(1, CRITERIA[1]),
+            loadGraph(2, CRITERIA[2]),
+            loadGraph(3, CRITERIA[3])
         ]);
+    } catch (error) {
+        console.error('Error updating graphs:', error);
     } finally {
         updateBtn.disabled = false;
     }
 }
-window.addEventListener('DOMContentLoaded', function () {
-    updateAllGraphs();
-});
 
+// Make updateAllGraphs globally accessible for the onclick handler
+window.updateAllGraphs = updateAllGraphs;

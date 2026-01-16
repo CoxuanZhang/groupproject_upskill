@@ -1,9 +1,11 @@
 """
 This file creates fake data for student records."""
 
-import csv
-import matplotlib.pyplot as plt
 import matplotlib as mpl
+mpl.use('Agg')  # MUST be first
+import matplotlib.pyplot as plt
+
+import csv
 import numpy as np
 from flask import Flask, render_template, send_file, jsonify
 import base64
@@ -16,7 +18,6 @@ def load_data(prof,select_grades,crit):
     with open(f'{prof}_grades.csv', 'r') as f:
         reader = csv.DictReader(f)
         grade_records = [row for row in reader]
-    print(grade_records[0])
     crit_values = [grade_record[crit] for grade_record in grade_records if grade_record['grade'] in select_grades]
     return crit_values
 
@@ -24,7 +25,8 @@ def visualise(prof, crit, lowest = 'P'):
     select_grades = grades[:grades.index(lowest)+1]
     crit_values = load_data(prof, select_grades, crit)
     if not crit_values:
-        return "Unfortunately, there are no students matching the criteria. You can be the first!"
+        print(f"No data found for professor: {prof}")
+        return ""
     crit_values = [int(value) for value in crit_values]
     avg = np.mean(crit_values)
 
@@ -48,7 +50,6 @@ def visualise(prof, crit, lowest = 'P'):
 
     plt.tight_layout()
     plt.legend()
-    plt.show()
 
     #convert to base64 string
     buffer = io.BytesIO()
@@ -58,6 +59,6 @@ def visualise(prof, crit, lowest = 'P'):
     plt.close(fig)
     return image_base64
 
-#app = Flask(__name__)
 if __name__ == "__main__":
-    visualise('Panagiotis Metaxas', 'pace')
+    image = visualise('Panagiotis Metaxas', 'pace')
+    print(image)
