@@ -6,72 +6,80 @@
     <title>Prof Profile</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<div class="container" id="prof-profile-container">
-    <div id="prof-name" class="displayElement">
-        <!-- Faculty cards will be inserted here by JavaScript -->
-    </div>
-    <script type="module" src="./viewProfProfile.mjs"></script>
-
-    <div class="container" id="range-selector">
-        <label for="grade">Your ideal grade:</label>
-        <input type="range" id="grade" min="0" max="10" list="levels">
-
-        <div class="slider-labels">
-            <span>F</span>
-            <span>P</span>
-            <span>C-</span>
-            <span>C</span>
-            <span>C+</span>
-            <span>B-</span>
-            <span>B</span>
-            <span>B+</span>
-            <span>A-</span>
-            <span>A</span>
+<header>
+        <flex-container>
+        <nav>
+            <ul>                
+                <li><a href="site.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </nav></header>
+<div class = "container" id ="main-container">  
+    <div class="container" id="prof-profile-container">
+        <div id="prof-name" class="displayElement">
+            <!-- Faculty cards will be inserted here by JavaScript -->
         </div>
-        <datalist id="levels">
-            <option value="0"></option>
-            <option value="1"></option>
-            <option value="2"></option>
-            <option value="3"></option>
-            <option value="4"></option>
-            <option value="5"></option>
-            <option value="6"></option>
-            <option value="7"></option>
-            <option value="8"></option>
-            <option value="9"></option>
-            <option value="10"></option>
-        </datalist>
-    </div>
-    <div id="prof-ratings" class="displayElement">
+        <script type="module" src="./viewProfProfile.mjs"></script>
+
+        <div class="container" id="range-selector">
+            <label for="grade">Your ideal grade:</label>
+            <input type="range" id="grade" min="0" max="10" list="levels">
+
+            <div class="slider-labels">
+                <span>F</span>
+                <span>P</span>
+                <span>C-</span>
+                <span>C</span>
+                <span>C+</span>
+                <span>B-</span>
+                <span>B</span>
+                <span>B+</span>
+                <span>A-</span>
+                <span>A</span>
+            </div>
+            <datalist id="levels">
+                <option value="0"></option>
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+                <option value="6"></option>
+                <option value="7"></option>
+                <option value="8"></option>
+                <option value="9"></option>
+                <option value="10"></option>
+            </datalist>
         <button id="update-btn" onclick="window.updateAllGraphs()">Update Graph</button>
-        <div id="graphs-container">
-            <div class="graph-section">
-                <h2>Criteria 1: Learning Pace</h2>
-                <div class="graph-wrapper">
-                    <img id="graph-1" src="" alt="Loading Learning Pace Graph..." style="display: block;">
+        </div>
+    </div>
+        <div id="prof-ratings" class="container">
+            <div id="graphs-container">
+                <div class="graph-section">
+                    <h3>Criteria 1: Learning Pace</h3>
+                    <div class="graph-wrapper">
+                        <img id="graph-1" src="" alt="Loading Learning Pace Graph..." style="display: block;">
+                    </div>
                 </div>
-            </div>
 
-            <!-- Graph 2 -->
-            <div class="graph-section">
-                <h2>Criteria 2: Procrastination</h2>
-                <div class="graph-wrapper">
-                    <img id="graph-2" src="" alt="Loading Procrastination Graph..." style="display: block;">
+                <!-- Graph 2 -->
+                <div class="graph-section">
+                    <h3>Criteria 2: Procrastination</h3>
+                    <div class="graph-wrapper">
+                        <img id="graph-2" src="" alt="Loading Procrastination Graph..." style="display: block;">
+                    </div>
                 </div>
-            </div>
 
-            <!-- Graph 3 -->
-            <div class="graph-section">
-                <h2>Criteria 3: Prior Experience</h2>
-                <div class="graph-wrapper">
-                    <img id="graph-3" src="" alt="Loading Prior Experience Graph..." style="display: block;">
+                <!-- Graph 3 -->
+                <div class="graph-section">
+                    <h3>Criteria 3: Prior Experience</h3>
+                    <div class="graph-wrapper">
+                        <img id="graph-3" src="" alt="Loading Prior Experience Graph..." style="display: block;">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-    <button id="back-btn"> <a href="site.html">Back to Profile</a></button>
-
 </div>
 
 </html>

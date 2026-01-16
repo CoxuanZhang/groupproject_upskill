@@ -45,8 +45,7 @@ def visualise(prof, crit, lowest = 'P'):
                                 extend='neither',
                                 ticks=vals)
     cb.ax.axvline(x=avg, color='red', linewidth=3, linestyle='--', label=f'Average: {avg:.2f}')
-    ax.set_xlabel(f'Avergae {crit} for students of {prof} with grades above {select_grades[-1]}')
-    ax.set_title('Heatmap with Average Line on Colorbar')
+    ax.set_title(f'Avergae {crit} for students of {prof} with grades above {select_grades[-1]}')
 
     plt.tight_layout()
     plt.legend()
