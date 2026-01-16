@@ -61,5 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
         card.appendChild(field);
     });
 
+    
+    card.style.marginLeft = '10px';
+    container.style.backgroundColor = '#CFDBD5';
+    container.style.width = '75%';
+    container.style.marginLeft = '10%';
+    container.style.alignContent= 'center';
+    container.style.borderRadius = '10px';
+
+
     container.appendChild(card);
+
 });
