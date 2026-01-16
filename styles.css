@@ -220,33 +220,34 @@ footer {
     align-items: center;
 }
 
+/* Make main-container a flex row for side-by-side layout */
 #main-container {
     display: flex;
-    height: 73%;
-    width: 70%;
-    margin-left: 200px;
-    top: 20vh;
-    align-items: center;
-    gap:10px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+    width: 90%;
+    margin: 30px auto;
     background-color: #a98dac;
-    padding-left:30px;
     border-radius: 20px;
-    margin-top:20px;
-    flex-direction:row;
+    padding: 30px;
 }
 
+/* Profile container on the left */
 #prof-profile-container {
     display: flex;
-    width: 70%;
-    height: 73%;
-    place-items: left;
     flex-direction: column;
+    width: 350px;
+    min-width: 300px;
+    max-width: 400px;
 }
-#prof-ratings{
+/* Ratings container on the right */
+#prof-ratings {
     flex: 1;
-    place-items: left;
-    flex-direction: row;
-
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    max-width: 900px;
 }
 
 #update-btn {
