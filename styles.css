@@ -1,4 +1,3 @@
-
 body {
     background-color: rgb(245, 244, 240);
     color: #242423;
@@ -44,6 +43,27 @@ input {
 }
 
 h2 {
+    border-radius: 0%;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    font-weight: 500;
+    padding:5px 10px 5px 8px;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;   
+}
+#range-selector {
+    justify-content: flex-end;
+    display: block;
+    input {
+        margin-left: 10px;
+        width: 300px;
+        height: 40px;
+    }
+    label {
+        margin-left:10px;
+    }
+}
+h2,
+p {
     color: #333533;
     padding-left: 30px;
     margin-top: 30px;
@@ -58,13 +78,13 @@ header {
             background-image: url('https://wellesley-college.transforms.svdcdn.com/production/Academic-Departments/Computer-Science/CPA_20240307_ACA_JH19748-Final.jpg?w=980&h=654&q=90&auto=format&fit=min&dm=1710085725&s=7b3b2840b67d839485d1fbcdfb11cb27'); 
             background-size: contain;
             background-repeat: repeat-x;
-            background-position-x: 58%; 
-            background-position-y:25%;
+            background-position: center;
             height: 100%;
             position: sticky;
             top: 0;
+            left:0;
             width: 100%;
-            height: 110px;
+            height: 100px;
 
             ul {
                 display: flex;
@@ -100,6 +120,7 @@ header {
                 flex-direction: row;
                 justify-content: space-around;
             }
+            
         }
 
 search-bar {
@@ -204,6 +225,27 @@ footer {
     background: #CFDBD5;
     border: 1px solid #b9b9b9;
     text-decoration: underline;
+#prof-profile-container {
+    display: flex;
+    -direction: row;
+    background-color: #a98dac;
+    width: 70%;
+    height: 50%;
+    margin-left: 200px;
+    margin-top: 100px;
+    border-radius: 20px;
+    place-items: center;
+
+
+}
+#back-btn {
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #F5CB5C;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 650px;
 }
 
 .faculty-image {
@@ -228,4 +270,51 @@ footer {
     white-space: normal; /* Allow wrapping */
     margin: 5px 0;
 }
-    
+ 
+
+.faculty-cards{
+    background: linear-gradient(180deg, var(--card-bg), #f7f7f7);
+    color: var(--card-text);
+    width: 100%;
+    max-width: 760px;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    gap: var(--card-gap);
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#grade {
+    display: block;  /* This is the key fix */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-top: 5px;
+}
+
+.slider-labels span {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+}
+
+.graph-wrapper {
+    background-color: aliceblue;
+}
+
+.graph-wrapper img {
+    width: 350px;      /* or any fixed size you want */
+    height: 200px;     /* or any fixed size you want */
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    opacity: 1;
+}
