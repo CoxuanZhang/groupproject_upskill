@@ -1,4 +1,4 @@
-import {profData } from './data.js';
+import { profData } from './data.js';
 const params = new URLSearchParams(window.location.search);
 const nameParam = params.get('name');
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         container.id = 'prof-name';
         document.body.appendChild(container);
     }
-    container.innerHTML = ''; 
+    container.innerHTML = '';
 
     if (!prof) {
         const msg = document.createElement('p');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameEl = document.createElement('h2');
     nameEl.className = 'faculty-name';
     nameEl.textContent = prof.name || '';
-    card.appendChild(nameEl); 
+    card.appendChild(nameEl);
 
     const img = document.createElement('img');
     img.id = 'prof-image';
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     img.alt = prof.name || 'Professor headshot';
     card.appendChild(img);
 
-    
+
 
     const posEl = document.createElement('p');
     posEl.className = 'faculty-position';
@@ -55,11 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (skip.has(key) || value == null) return;
         const field = document.createElement('p');
         field.className = `prof-${key}`;
-    //format
+        //format
         const label = key.replace(/([A-Z])/g, ' $1').replace(/^\w/, c => c.toUpperCase());
         field.innerHTML = `<strong>${label}:</strong> ${String(value)}`;
         card.appendChild(field);
     });
+
+
+    //card.style.marginLeft = '10px';
+   // container.style.backgroundColor = '#CFDBD5';
+    //container.style.width = '75%';
+    //container.style.marginLeft = '10%';
+    //container.style.alignContent = 'center';
+    //container.style.borderRadius = '10px';
+
 
     container.appendChild(card);
 });
