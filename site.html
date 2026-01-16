@@ -22,18 +22,20 @@
             <img src="search-icon.png" alt="search icon" id="searchicon" width="20" height="20">
             <script src="profrate.js" type= "text/Javascript" ></script>
             <input type="text" id="search" placeholder="Search for your prof...">
+            <button id="search" class="search-button">Search</button>
         </search-bar>
         </flex-container>
     </header>
     <body>  
         <script type="module" src="profrate.mjs"></script>
         <img src="logo.png" alt="rate my wellesley CS prof logo" id="logo">
-        <div id="bigsearch">
-            <search-bar>
+        <!--<div id="bigsearch">-->
+            <search-bar id="bigsearch">
                 <script src="profrate.js" type= "text/Javascript" ></script>
-                <input type="text" id="search" placeholder="Search for your prof...">
+                <input type="text" id="search-input" placeholder="Search for your prof...">
+                <button id="search-button" class="search-button">Search</button>
             </search-bar>
-        </div>
+        <!--</div>-->
         <h2>Faculty Directory</h2>
         <p>For demo, these are all CS professors!</p>
         <div id="faculty-gallery" class="gallery">
