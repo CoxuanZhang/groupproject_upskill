@@ -203,6 +203,7 @@ footer {
     transition: ease-in-out 0.3s;
     background: #CFDBD5;
     border: 1px solid #b9b9b9;
+    text-decoration: underline;
 }
 
 .faculty-image {
