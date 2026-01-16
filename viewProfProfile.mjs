@@ -1,4 +1,4 @@
-import { profData } from './data.js';
+import {profData } from './data.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
@@ -62,4 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     container.appendChild(card);
+});
+
+const slider = document.getElementById('grade');
+const gradeLabels = ['F', 'P', 'C-', 'C', 'C+', 'B-', 'B', 'B+', 'A-', 'A', 'A+'];
+slider.addEventListener('input', function() {
+    const selectedGrade = gradeLabels[this.value];
 });

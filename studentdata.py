@@ -1,10 +1,14 @@
 """
 This file creates fake data for student records."""
 
-import csv, random
+import random
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import numpy as np
+from flask import Flask, render_template, send_file, jsonify
+import base64
+import io
+
 
 # Professors: Takis (CS231, CS230), Eni (CS299, CS234), Carolyn (CS111, CS333)
 # file 1: 40 students with distinct profiles (simulate student accounts)
@@ -50,6 +54,8 @@ for prof, courselst in course_professors.items():
 def visualise(prof, crit, lowest = 'P'):
     select_grades = grades[:grades.index(lowest)+1]
     select_students = [grade_record['Student']['student_id'] for grade_record in grade_records if grade_record['Professor'] == prof and grade_record['Student']['grade'] in select_grades]
+    if not select_students:
+        return "Unfortunately, there are no students matching the criteria. You can be the first!"
     crit_values = [students[student_id - 1][crit] for student_id in select_students]
     avg = np.mean(crit_values)
 
@@ -74,6 +80,13 @@ def visualise(prof, crit, lowest = 'P'):
     ax.set_title('Heatmap with Average Line on Colorbar')
 
     plt.tight_layout()
-    plt.show()
 
-visualise('Takis', 'pace')
+    #convert to base64 string
+    buffer = io.BytesIO()
+    plt.savefig(buffer, format='png', bbox_inches='tight', dpi=150)
+    buffer.seek(0)
+    image_base64 = base64.b64encode(buffer.read()).decode()
+    plt.close(fig)
+    return image_base64
+
+app = Flask(__name__)
