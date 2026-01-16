@@ -7,7 +7,7 @@
             <link rel="stylesheet" href="styles.css">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Margarine&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <header>
         <flex-container>
@@ -18,21 +18,29 @@
                 <li><a href="account.html">My Account</a></li>
             </ul>
         </nav>
-            <search-bar>
-                <img src="search-icon.png" alt="search icon" width="20" height="20">
-                <script src="profrate.js" type= "text/Javascript" ></script>
-                <input type="text" id="search" placeholder="Search for your prof...">
-                <input type="button" value="Enter" onclick="Print()">
-            </search-bar>
+        <search-bar id="headersearch">
+            <img src="search-icon.png" alt="search icon" id="searchicon" width="20" height="20">
+            <script src="profrate.js" type= "text/Javascript" ></script>
+            <input type="text" id="search" placeholder="Search for your prof...">
+        </search-bar>
         </flex-container>
     </header>
     <body>  
         <script type="module" src="profrate.mjs"></script>
-        <h1>Site</h1>
+        <img src="logo.png" alt="rate my wellesley CS prof logo" id="logo">
+        <div id="bigsearch">
+            <search-bar>
+                <script src="profrate.js" type= "text/Javascript" ></script>
+                <input type="text" id="search" placeholder="Search for your prof...">
+            </search-bar>
+        </div>
         <h2>Faculty Directory</h2>
         <p>For demo, these are all CS professors!</p>
         <div id="faculty-gallery" class="gallery">
             <!-- Faculty cards will be inserted here by JavaScript -->
         </div>
     </body>
+    <footer>
+        <p>made by coco imara + natalie</p>
+    </footer>
 </html>
