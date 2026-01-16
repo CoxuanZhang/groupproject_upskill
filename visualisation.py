@@ -24,11 +24,14 @@ def load_data(prof,select_grades,crit):
 def visualise(prof, crit, lowest = 'P'):
     select_grades = grades[:grades.index(lowest)+1]
     crit_values = load_data(prof, select_grades, crit)
+    print(f"DEBUG: select_grades = {select_grades}")
+    print(f"DEBUG: crit_values = {crit_values}")
     if not crit_values:
         print(f"No data found for professor: {prof}")
         return ""
     crit_values = [int(value) for value in crit_values]
     avg = np.mean(crit_values)
+    print(f"DEBUG: avg = {avg}")
 
     fig=plt.figure(figsize=(8,2))
     ax=fig.add_subplot(111)
@@ -45,12 +48,13 @@ def visualise(prof, crit, lowest = 'P'):
                                 extend='neither',
                                 ticks=vals)
     cb.ax.axvline(x=avg, color='red', linewidth=3, linestyle='--', label=f'Average: {avg:.2f}')
-    ax.set_xlabel(f'Avergae {crit} for students of {prof} with grades above {select_grades[-1]}')
-    ax.set_title('Heatmap with Average Line on Colorbar')
-
+    ax.set_title(f'Avergae {crit} for students of {prof} with grades above {select_grades[-1]}')
+    
     plt.tight_layout()
     plt.legend()
 
+
+    
     #convert to base64 string
     buffer = io.BytesIO()
     plt.savefig(buffer, format='png', bbox_inches='tight', dpi=150)
