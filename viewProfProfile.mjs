@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.addEventListener('input', function() {
             selectedGrade = gradeLabels[this.value];
             console.log('Selected grade updated to:', selectedGrade);
+            updateAllGraphs(); // Call updateAllGraphs on slider change
         });
     }
     

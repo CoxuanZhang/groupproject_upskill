@@ -134,27 +134,42 @@ header {
     align-items: center;
 }
 
+#main-container {
+    display: flex;
+    height: 73%;
+    width: 70%;
+    margin-left: 200px;
+    top: 20vh;
+    align-items: center;
+    gap:10px;
+    background-color: #a98dac;
+    padding-left:30px;
+    border-radius: 20px;
+    margin-top:20px;
+    flex-direction:row;
+}
+
 #prof-profile-container {
     display: flex;
-    -direction: row;
-    background-color: #a98dac;
     width: 70%;
-    height: 50%;
-    margin-left: 200px;
-    margin-top: 100px;
-    border-radius: 20px;
-    place-items: center;
-
+    height: 73%;
+    place-items: left;
+    flex-direction: column;
+}
+#prof-ratings{
+    flex: 1;
+    place-items: left;
+    flex-direction: row;
 
 }
-#back-btn {
+
+#update-btn {
     margin: 20px;
     padding: 10px 20px;
     background-color: #F5CB5C;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 650px;
 }
 
 .faculty-image {
@@ -179,7 +194,6 @@ header {
     white-space: normal; /* Allow wrapping */
     margin: 5px 0;
 }
- 
 
 .faculty-cards{
     background: linear-gradient(180deg, var(--card-bg), #f7f7f7);
