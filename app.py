@@ -3,7 +3,7 @@ from flask_cors import CORS
 from visualisation import visualise
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route('/visualisation', methods=['POST'])
 @app.route('/generate-graph', methods=['POST'])
